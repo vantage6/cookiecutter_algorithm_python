@@ -37,8 +37,8 @@ of them, make sure to type `enter`:
 
 | Field | Description |
 |---|---|
-| `project_name` | Name of the project |
-| `repo_name`  | Name of the (GitHub) repository. Spaces will be replaced by underscores (`_`). Please use [`snake_case`](https://en.wikipedia.org/wiki/Snake_case) and *avoid* dashes (`-`)! |
+| `algorithm_name` | Name of the algorithm |
+| `repo_name`  | Name of the (GitHub) repository. Please use [`snake_case`](https://en.wikipedia.org/wiki/Snake_case). Spaces and dashes will be replaced by underscores (`_`). |
 | `author_name`  | Your name (or your organization, company, or team) |
 | `description` | A short description of the algorithm. Please include the core details of your algorithm (e.g., if it for [horizontally- or vertically-partitioned data](https://vantage6.ai/documents/7/moncada-torres2020vantage6_57GU4Gt.pdf), if it is an [MPC](https://en.wikipedia.org/wiki/Secure_multi-party_computation) algorithm, etc. |
 | `open_source_license` | The software license for your project (more information below). |
@@ -63,6 +63,56 @@ If you are interested in adding more licenses *to the template*:
 corresponding `if`.
 * In the license text, change the important fields to [Jinja delimiters](https://jinja.palletsprojects.com/en/3.1.x/templates/) (e.g., `<year>` to ` {% now 'utc', '%Y' %}`; `<author name>` to `{{ cookiecutter.author_name }}`)
 
+
+## Directory structure
+The resulting directory structure for your algorithm is as follows:
+
+```
+├── algorithm_name     <- The core files of your algorithm.
+│   └── __init__.py
+│   └── central.py     <- Functions for the server. Former master.py.
+│   └── remote.py      <- Functions for the nodes (which have access to the data).
+|                         Former rpc.py.
+│
+├── docs               <- A default Sphinx project for documenting your algorithm.
+|                         See https://www.sphinx-doc.org/ for more details.
+|                         We suggest that the documentation includes at least
+|                         the following sections:
+|                          - Introduction
+|                          - Algorithm (mathematical) description
+|                          - Validation
+│
+├── examples           <- Examples of how to use the algorithm in the
+|   |                     shape of Jupyter notebooks. The suggested naming
+|   |                     convention is a number (for ordering), the creator's
+|   |                     initials, and a short description, (e.g., `01_xyz_running_the_algorithm`).
+|   |                     We also recommend you take a look into using jupytext.
+│   └── 01_xyz_running_the_algorithm.ipynb
+│
+├── tests              <- Functions for testing your algorithm.
+│   └── test_environment.py   
+│
+├── .gitignore
+|
+├── Dockerfile
+|
+├── LICENSE            <- If chosen, the appropriate license file.
+|
+├── Makefile
+|
+├── README.md          <- The top-level README for users of the algorithm.
+|                         Make sure to provide a helpful description.
+|                         Including a Quick Start guide is encouraged.
+|
+├── requirements.txt   <- The requirements file for reproducing the algorithm
+|                         environment. This can be generated with `pip freeze > requirements.txt`
+│
+├── setup.py           <- Makes the algorithm pip installable (pip install -e .)
+|                         so algorithm_name can be imported.
+│
+└── tox.ini            <- tox file with settings for running tox.
+                          See https://tox.wiki/
+```
 
 ## Contributing
 

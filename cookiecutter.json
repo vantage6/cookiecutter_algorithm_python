@@ -1,6 +1,6 @@
 {
     "algorithm_name": "algorithm_name",
-    "repo_name": "{{ cookiecutter.algorithm_name.lower().replace(' ', '_') }}",
+    "repo_name": "{{ cookiecutter.algorithm_name.lower().replace(' ', '_').replace('-', '_') }}",
     "author_name": "Your name (or your organization, company, or team)",
     "description": "A short description of the algorithm.",
     "open_source_license": ["MIT", "Apache-License-2", "BSD-3-Clause", "No license file"],
