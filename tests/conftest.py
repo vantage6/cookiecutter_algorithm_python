@@ -7,7 +7,7 @@ from cookiecutter import main
 CCDS_ROOT = Path(__file__).parents[1].resolve()
 
 args = {
-        'project_name': 'vantage6_algorithm',
+        'algorithm_name': 'vantage6_algorithm',
         'author_name': 'vantage6',
         'open_source_license': 'BSD-3-Clause',
         'python_interpreter': 'python'
@@ -34,7 +34,7 @@ def default_baked_project(tmpdir_factory, request):
         output_dir=out_dir
     )
 
-    pn = pytest.param.get('project_name') or 'project_name'
+    pn = pytest.param.get('algorithm_name') or 'algorithm_name'
     
     # project name gets converted to lower case on Linux but not Mac
     pn = system_check(pn)

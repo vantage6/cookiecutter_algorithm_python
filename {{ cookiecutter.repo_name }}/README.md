@@ -1,4 +1,4 @@
-{{cookiecutter.project_name}}
+{{cookiecutter.algorithm_name}}
 ==============================
 
 {{cookiecutter.description}}

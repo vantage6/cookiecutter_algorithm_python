@@ -24,13 +24,13 @@ def no_curlies(filepath):
 
 @pytest.mark.usefixtures("default_baked_project")
 class TestCookieSetup(object):
-    def test_project_name(self):
+    def test_algorithm_name(self):
         project = self.path
-        if pytest.param.get('project_name'):
+        if pytest.param.get('algorithm_name'):
             name = system_check('DrivenData')
             assert project.name == name
         else:
-            assert project.name == 'project_name'
+            assert project.name == 'algorithm_name'
 
     def test_author(self):
         setup_ = self.path / 'setup.py'
@@ -45,7 +45,7 @@ class TestCookieSetup(object):
         readme_path = self.path / 'README.md'
         assert readme_path.exists()
         assert no_curlies(readme_path)
-        if pytest.param.get('project_name'):
+        if pytest.param.get('algorithm_name'):
             with open(readme_path) as fin:
                 assert 'DrivenData' == next(fin).strip()
 
