@@ -2,9 +2,7 @@
 
 *A lean [Cookiecutter template](https://github.com/cookiecutter/cookiecutter) for developing algorithms for [vantage6](https://github.com/vantage6/) in Python.*
 
-<h1 align="center">
-  <a href="https://vantage6.ai"><img src="./multimedia/cookiecutter_x_vantage6.PNG" alt="cookiecutter_vantage6" width="750"></a>
-</h1>
+![cookiecutter_vantage6](multimedia/cookiecutter_x_vantage6.PNG?raw=true "Cookiecutter X vantage6")
 
 ## Requirements:
 * Python >=3.7
