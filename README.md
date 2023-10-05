@@ -1,5 +1,7 @@
 # Cookiecutter for Python Algorithm Development for vantage6
 
+## **This repository is superseded by https://github.com/vantage6/v6-algorithm-template**
+
 *A lean [Cookiecutter template](https://github.com/cookiecutter/cookiecutter) for developing algorithms for [vantage6](https://github.com/vantage6/) in Python.*
 
 ![cookiecutter_vantage6](multimedia/cookiecutter_x_vantage6.PNG?raw=true "Cookiecutter X vantage6")
